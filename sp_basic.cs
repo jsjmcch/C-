@@ -1,3 +1,56 @@
+* File info & Directory info 
+<File>
+1. Create
+ - FileStream fs = File.Create("a.dat");
+ - FileInfo file = new FileInfo("a.dat");
+   FileStream fs = file.Create();
+2. Copy
+ - File.Copy("a.dat", "b.bat");
+ - FileInfo src = new FileInfo("a.dat");
+   FileInfo dst = src.CopyTo("b.dat");
+3. Delete
+ - File.Delete("a.dat");
+ - FileInfo file = new FileInfo("a.dat");
+   file.Delete();
+4. Move
+ - File.Move("a.dat", "b.dat");
+ - FileInfo file = new FileInfo("a.dat");
+   file.MoveTo("b.dat");
+5. Check Exist 
+ - if (File.Exists("a.dat"))
+ - FileInfo file = new FileInfo("a.dat");
+   if (file.Exists)
+	   
+<Directory>
+1. Create
+ - DirectoryInfo dir = Directory.CreateDirectory("a");
+ - DirectoryInfo dir = new Directory("a");
+   dir.Create();
+2. Delete
+ - Directory.Delete("a");
+ - DirectoryInfo dir = new DirectoryInfo("a");
+   dir.Delete();
+3. Move
+ - Directory.Move("a", "b");
+ - DirectoryInfo dir = new DirectoryInfo("a");
+   dir.MoveTo("b");
+4. Check Exist
+ - if (Directory.Exists("a.dat"))
+ - DirectoryInfo dir = new DirectoryInfo("a");
+   if (dir.Exists)
+5. Search Attribute
+ - Console.WriteLine(Directory.GetAttributes("a");
+ - DirectoryInfo dir = new DirectoryInfo("a")
+   Console.WriteLine(dir.Attributes);
+6. Search subdirectories
+ - string[] dirs = Directory.GetDirectories("a");
+ - DirectoryInfo dir = new DirectoryInfo("a");
+   DirectoryInfo[] dirs = dir.GetDirectories();
+7. Search subfiles
+ - string[] files = Directory.GetFiles("a");
+ - DirectoryInfo dir = new DirectoryInfo("a");
+   FileInfo[] files = dir.GetFiles();		     
+
 FileClient.cs
 using System;
 using System.Collections.Generic;
